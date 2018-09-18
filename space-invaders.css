@@ -1,0 +1,8 @@
+#canvas {
+    display: block;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}

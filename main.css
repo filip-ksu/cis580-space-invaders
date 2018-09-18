@@ -1,0 +1,76 @@
+:root {
+    --bg-dark: #263238;
+    --bg-light: #eceff1;
+    --bg-board: #bcaaa4;
+    --bg-hole: #795548;
+    --text-light: #ffffff;
+    --text-dark: rgba(0, 0, 0, 0.87);
+
+    --color-blue: #2196f3;
+    --color-red: #f44336;
+    --color-green: #4caf50;
+    --color-yellow: #ffeb3b;
+}
+
+div {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    height: 100vh;
+}
+
+#content > .content-container > * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+header,
+#content,
+footer {
+    padding: 1em;
+}
+
+header {
+    height: 3em;
+}
+
+#content {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    height: calc(100vh - 12em);
+}
+
+footer {
+    text-align: center;
+    height: 3em;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+}
+
+header p {
+    float: right;
+}
+
+/*----------------------------------------------------------------------------*/
+#menu {
+    text-align: center;
+}
+
+#game-info {
+    display: none;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#game-info.game {
+    display: block;
+}
