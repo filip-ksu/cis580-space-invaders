@@ -5,6 +5,10 @@ class Enemy {
         this.width = width;
         this.height = height;
         this.colour = colour;
+        this.dx = Math.round(Math.random() * 6 - 3);
+        this.dy = 1;
+        this.tick = 0;
+        this.maxTick = Math.round(Math.random() * 2 + 1);
     }
 
     drawSelf(ctx) {
@@ -18,16 +22,27 @@ class Enemy {
         ctx.fill();
     }
 
-    updatePosition(CANVAS_WIDTH) {
-        let dx = Math.round(Math.random() * 2 - 1);
-        let dy = Math.round(Math.random());
-        this.x += dx;
-        this.y += dy;
+    updatePosition(CANVAS_WIDTH, CANVAS_HEIGHT, endGameCallback) {
+        this.tick++
+        this.x += this.dx;
+        if (this.tick === this.maxTick) {
+            this.y += this.dy;
+            this.tick = 0;
+        }
         if (this.x + this.width >= CANVAS_WIDTH) {
             this.x = CANVAS_WIDTH - this.width;
+            this.dx *= -1;
         }
         if (this.x < 0) {
             this.x = 0;
+            this.dx *= -1;
         }
+        if (this.y > CANVAS_HEIGHT - this.height) {
+            endGameCallback();
+        }
+    }
+
+    isHitBy(object) {
+        return (this.y + this.height >= 0 && object.y <= this.y + this.height && object.x <= this.x + this.width && object.x + object.width >= this.x);
     }
 }

@@ -32,4 +32,8 @@ class Player {
             this.x = 0;
         }
     }
+
+    isHitBy(object) {
+        return (object.y + object.height >= this.y && object.x <= this.x + this.width && object.x + object.width >= this.x);
+    }
 }

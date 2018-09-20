@@ -1,8 +1,6 @@
 :root {
     --bg-dark: #263238;
     --bg-light: #eceff1;
-    --bg-board: #bcaaa4;
-    --bg-hole: #795548;
     --text-light: #ffffff;
     --text-dark: rgba(0, 0, 0, 0.87);
 
@@ -62,6 +60,18 @@ header p {
 /*----------------------------------------------------------------------------*/
 #menu {
     text-align: center;
+}
+
+#btn-new-game {
+    font: inherit;
+    box-sizing: content-box;
+    cursor: pointer;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.5em;
 }
 
 #game-info {
